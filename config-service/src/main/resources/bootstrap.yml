@@ -6,10 +6,10 @@ spring:
       server:
         git:
           uri: https://github.com/NunezIvan/Microservices-JavaSpring-Course.git
-          searchPaths: config-data
           username: ${GIT_USER}
           password: ${GIT_PASSWORD}
-    security:
-      user:
-        name: root
-        password: s3cr3t
+          search-paths: config-data
+  security:
+    user:
+      name: root
+      password: s3cr3t
