@@ -1,6 +1,7 @@
 package academy.digitallab.shopping_service.Entity;
 
 
+import academy.digitallab.shopping_service.model.Customer;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import jakarta.validation.Valid;
@@ -41,6 +42,10 @@ public class Invoice {
 
 
     private String state;
+
+    @Transient
+    private Customer customer;
+
 
     public Invoice(){
         items = new ArrayList<>();

@@ -1,6 +1,7 @@
 package academy.digitallab.shopping_service.Entity;
 
 
+import academy.digitallab.shopping_service.model.Product;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Positive;
 import lombok.Data;
@@ -21,6 +22,9 @@ public class InvoiceItem {
 
     @Transient
     private double subTotal;
+
+    @Transient
+    private Product product;
 
     public Double getSubTotal(){
         if(this.price>0 && this.quantity>0){
