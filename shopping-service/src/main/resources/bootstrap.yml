@@ -6,3 +6,16 @@ spring:
       uri: http://localhost:8081
       username: root
       password: s3cr3t
+
+
+resilience4j.circuitbreaker:
+  instances:
+    default:
+      registerHealthIndicator: true
+      slidingWindowSize: 100
+      failureRateThreshold: 50
+      waitDurationInOpenState: 10000ms
+      permittedNumberOfCallsInHalfOpenState: 10
+      minimumNumberOfCalls: 5
+  metrics:
+    enabled: true
