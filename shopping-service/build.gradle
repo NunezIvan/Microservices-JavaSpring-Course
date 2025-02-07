@@ -26,6 +26,7 @@ repositories {
 ext {
 	set('springCloudVersion', "2024.0.0")
 	set('hystrixVersion', "2.2.2.RELEASE")
+	set('springBootAdminVersion', "3.4.1")
 }
 
 dependencies {
@@ -42,7 +43,8 @@ dependencies {
 	implementation 'org.springframework.cloud:spring-cloud-starter-bootstrap'
 	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
 	implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
-	//implementation 'org.springframework.cloud:spring-cloud-starter-sleuth'
+	implementation 'de.codecentric:spring-boot-admin-starter-client'
+	implementation 'org.springframework.cloud:spring-cloud-starter-sleuth'
 	compileOnly 'org.projectlombok:lombok'
 	runtimeOnly 'com.h2database:h2'
 	annotationProcessor 'org.projectlombok:lombok'
@@ -53,6 +55,7 @@ dependencies {
 dependencyManagement {
 	imports {
 		mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+		mavenBom "de.codecentric:spring-boot-admin-dependencies:${springBootAdminVersion}"
 	}
 }
 
